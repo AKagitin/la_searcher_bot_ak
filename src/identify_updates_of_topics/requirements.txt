@@ -8,7 +8,7 @@ asn1crypto==1.4.0
 beautifulsoup4==4.9.3
 cachetools==5.5.0
 cchardet==2.1.7
-certifi==2023.7.22
+certifi==2024.7.4
 chardet==4.0.0
 charset-normalizer==3.4.1
 dawg-python==0.7.2
@@ -36,7 +36,7 @@ grpcio-status==1.62.3
 h11==0.14.0
 httpcore==0.16.3
 httpx==0.23.3
-idna==2.10
+idna==3.7
 intervaltree==3.1.0
 ipymarkup==0.9.0
 lxml==4.9.1
@@ -50,7 +50,6 @@ propcache==0.3.1
 proto-plus==1.25.0
 protobuf==4.25.5
 psycopg2-binary==2.9.5
-py==1.11.0
 pyasn1==0.6.1
 pyasn1-modules==0.4.1
 pydantic==2.10.5
@@ -63,8 +62,8 @@ python-dotenv==1.0.1
 python-telegram-bot==20.2
 pytz==2021.1
 razdel==0.5.0
-requests==2.31.0
-retry==0.9.2
+requests==2.32.0
+retry2==0.9.5
 rfc3986==1.5.0
 rsa==4.9
 scramp==1.4.0
@@ -77,7 +76,7 @@ sqlalchemy==1.4.54
 typing-extensions==4.12.2
 tzdata==2024.2 ; sys_platform == 'win32'
 tzlocal==5.2
-urllib3==1.26.18
+urllib3==1.26.19
 yandex-geocoder==3.0.1
 yargy==0.16.0
 yarl==1.18.3

@@ -3,7 +3,6 @@ from pathlib import Path
 from unittest.mock import MagicMock, Mock, patch
 
 import pytest
-from faker import Faker
 from requests_mock.mocker import Mocker
 from sqlalchemy.orm import Session
 
@@ -11,10 +10,8 @@ from _dependencies.commons import sqlalchemy_get_pool
 from check_first_posts_for_changes import main
 from check_first_posts_for_changes._utils import forum
 from check_first_posts_for_changes._utils.database import DBClient
-from tests.common import find_model
+from tests.common import fake, find_model
 from tests.factories import db_factories, db_models
-
-fake = Faker()
 
 
 @pytest.fixture(autouse=True)
@@ -61,6 +58,7 @@ class TestMain:
 
         assert res
 
+    @pytest.mark.freeze_time('2025-02-13 14:27:00')
     def test_get_topics_to_check(self):
         cnt = 10
         geofolder = db_factories.GeoFolderFactory.create_sync(
@@ -75,6 +73,7 @@ class TestMain:
                 search_forum_num=search.search_forum_num,
             )
 
+        assert main.get_db_client().get_list_of_topics()
         topics_to_check = main.get_topics_to_check()
 
         assert topics_to_check
